@@ -1,8 +1,12 @@
 import requests
+from datetime import date
 
-f = open("bank_backup_01_07_2021.json", "w")
+filename = f"bank_backup_{date.today()}"
+BANK_IP = '13.233.77.254'
 
-next_url = "http://184.169.226.23/bank_transactions"
+f = open(f"{filename}.json", "w")
+
+next_url = f"http://{BANK_IP}/bank_transactions"
 
 while next_url:
     
